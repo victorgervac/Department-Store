@@ -1,3 +1,3 @@
 class Department < ApplicationRecord
-    has_manny :item 
+    has_many :item 
 end
