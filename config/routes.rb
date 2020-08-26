@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :departments
+  
+  resources :departments do 
+    resources :items
+  end
+ 
   
   # get 'departments/index'
   # get 'departments/show'
