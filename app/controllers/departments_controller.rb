@@ -5,7 +5,6 @@ class DepartmentsController < ApplicationController
   end
 
   def show
-    @department = Department.find(params[:id])
   end
 
   def new
@@ -21,6 +20,15 @@ class DepartmentsController < ApplicationController
       render partial: :new
     end
   end
+  def update 
+    @department = Department.new(department_params)
+    if @department.save
+      redirect_to departments_path
+    else
+      render partial: "form" 
+    end
+  end
+
 
   def edit
     render partial: "form"
@@ -34,18 +42,19 @@ class DepartmentsController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy 
     @department.destroy
     redirect_to departments_path
+  else 
+    render :department_path
   end
 
  
 
   private
-
-  def set_department
-    @department = Department.find(params[:id])
-  end 
+  # def set_department 
+  #   @department = Department.find(params[:id])
+  # end
 
   def department_params
     params.require(:department).permit(:name)
