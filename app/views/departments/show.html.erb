@@ -1,6 +1,9 @@
 <h1>Department</h1>
-<p>Department Name:<% @department.name%></p>
-<p>Department Items:<% @department.items%></p>
-
-
+<br />
+<p>Department Name:<% @department.name %></p>
+<br />
+<br />
+<%= link_to "Edit Department", edit_department_path %>
+<%= link_to "Delete Department", department_path(@department), method: :delete %>
+<%= link_to "Back", departments_path %>
 

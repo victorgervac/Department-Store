@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'items/index'
+  get 'items/show'
+  get 'items/new'
+  get 'items/edit'
   resources :departments do 
     resources :items
   end

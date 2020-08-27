@@ -1,4 +1,7 @@
 <h1>Departments Store</h1>
+<br />
+<%= link_to "Add a new Department", new_department_path %>
 <% @departments.each do |department| %>
-    <h2><%= department.name %></h2>
+    <h2>Name:<%= department.name %></h2>
+    <%= link_to "View department", department_path %>
 <% end %>

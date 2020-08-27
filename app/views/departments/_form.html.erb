@@ -1,7 +1,7 @@
-<h1><%= @department ? "Edit Department" : "Create Department" %></h1>
+<h1><%= @department.id ? "Edit #{@department.name} : "Add New Department" %></h1>
 <hr />
 <%= form_for @department do |f| %>
-    <%= f.label :name %>
+    <%= f.label :name required: true %>
     <%= f.text_field :name %>
     
     <%= f.submit %>
